@@ -1,12 +1,40 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  image-rendering: optimizeQuality;
+  background-image: url(asset-path('aa.jpg'));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .centered-content {
   text-align: center;
-  margin-top: 50px; // 追加：センタリングのためのマージンを調整
+  margin-top: 50px;
   width: 100%;
+}
+
+.centered-content a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1DA1F2;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.centered-content a:hover {
+  background-color: #0D8DEE;
 }
 
 .header-content {
   text-align: center;
-  margin-top: -70px; /* この値は必要に応じて調整してください */
+  margin-top: -70px;
 }
 
 .centered-block {
@@ -24,83 +52,60 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  
-  /* グラデーション背景を追加 */
-  background-image: linear-gradient(to bottom right, #00a8e8, #6ecf95); /* 青から緑へのグラデーション */
-  
+  background-image: linear-gradient(to bottom right, #00a8e8, #6ecf95);
   padding: 20px;
-  border-radius: 15px; /* 角を丸くする */
+  border-radius: 15px;
   width: 300px;
-  margin: 0 auto; /* 中央寄せ */
+  margin: 0 auto;
   margin-top: 120px;
-
-  /* ぼかし効果を強化 */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* ソフトな影を強化 */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-
-.centered-form input[type="number"] {
+.centered-form input[type="number"], 
+.centered-form input[type="submit"] {
   width: 80%;
   padding: 10px;
   border-radius: 5px;
-  border: 1px solid #a8e0b9; /* 緑色の境界線 */
   margin-bottom: 10px;
-  font-size: 16px; /* 文字サイズの調整 */
+  font-size: 16px;
 }
 
 .centered-form input[type="submit"] {
-  background-color: #6ecf95; /* 緑色のボタン */
-  color: white; /* 文字色を白に */
+  background-color: #6ecf95;
+  color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold; /* 太字にする */
-  cursor: pointer; /* マウスカーソルを指マークに */
-  transition: background-color 0.3s; /* クリックしたときのアニメーション */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .centered-form input[type="submit"]:hover {
-  background-color: #5db07f; /* ホバー時の色 */
+  background-color: #5db07f;
 }
 
 h1 {
   color: #00a8e8;
 }
 
-body {
-  image-rendering: optimizeQuality; // 画質を最適化
-  background-image: url(asset-path('aa.jpg')); /* 'your_image_filename.jpg' は使用する画像ファイルの名前に置き換えてください */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 .outlined-text {
-  -webkit-text-stroke-width: 2px; 
-  -webkit-text-stroke-color: black; 
-  color: transparent; // これにより、テキスト自体は非表示になり、ストロークだけが表示される
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  color: transparent;
 }
 
 .lower-text {
   padding-top: 150px;
-  text-shadow: -1px -1px 0 #FFFFFF,  
+  text-shadow: -1px -1px 0 #FFFFFF,
                1px -1px 0 #FFFFFF,
               -1px  1px 0 #FFFFFF,
-               1px  1px 0 #FFFFFF;  /* 白色の外枠 */
-  font-size: 4em;  /* フォントサイズを2倍にしてみます。必要に応じて調整 */
+               1px  1px 0 #FFFFFF;
+  font-size: 4em;
 }
 
 .centered-content.lower-text {
-  margin-top: -75px;  /* 上方向に20px移動します。この値は必要に応じて調整してください */
+  margin-top: -75px;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* スライダー全体のスタイル */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -114,28 +119,11 @@ input[type="range"] {
   transition: background-color 0.3s;
 }
 
-/* スライダーのホバー時のスタイル */
 input[type="range"]:hover {
   background: #b3b3b3;
 }
 
-/* スライダーのハンドル (つまみ部分) のスタイル */
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #00a8e8;  /* 青春の象徴として青色を使用 */
-  cursor: pointer;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  transition: background-color 0.3s;
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-  background: #008cb7;
-}
-
+input[type="range"]::-webkit-slider-thumb, 
 input[type="range"]::-moz-range-thumb {
   width: 24px;
   height: 24px;
@@ -146,37 +134,34 @@ input[type="range"]::-moz-range-thumb {
   transition: background-color 0.3s;
 }
 
+input[type="range"]::-webkit-slider-thumb:hover, 
 input[type="range"]::-moz-range-thumb:hover {
   background: #008cb7;
 }
 
-/* 選択された部分のスタイル */
-input[type="range"]::-moz-range-progress {
-  background: #00a8e8;
-}
-
+input[type="range"]::-moz-range-progress,
 input[type="range"]::-webkit-slider-runnable-track {
   background: #00a8e8;
 }
 
 .song-item {
-  background-color: rgba(255, 255, 255, 0.7); // 半透明の背景
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 10px 20px;
   border-radius: 10px;
   margin-bottom: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.centered-content a {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #1DA1F2; // Twitterの色
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s;
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
 }
 
-.centered-content a:hover {
-  background-color: #0D8DEE; // ホバー時の色変更
+.phrase-section, .songs-section {
+  flex: 1;
 }
