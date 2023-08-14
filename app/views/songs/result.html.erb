@@ -3,12 +3,17 @@
 <div class="content-container">
     <!-- 流行の言葉の部分 -->
     <div class="phrase-section">
-        <% if @phrase %>
-            <h2 style="text-align: center; color: #00a8e8;">その年の流行ったもの</h2>
-            <p class="centered-block with-width song-item"><%= @phrase.content %></p>
-        <% end %>
+      <% if @phrases.any? %>
+        <h2 style="text-align: center; color: #00a8e8;">その年の流行ったもの</h2>
+        <div style="max-width: 600px; margin: 0 auto;"> <!-- 追加：リストのコンテナ -->
+          <% @phrases.each do |phrase| %>
+            <p class="centered-block with-width song-item"><%= phrase.content %></p>
+      <% end %>
     </div>
-
+  <% else %>
+    <p style="text-align: center; color: #00a8e8;">その年の流行ったものはありません</p>
+  <% end %>
+</div>
     <!-- 流行った曲の部分 -->
     <div class="songs-section">
         <h2 style="text-align: center; color: #00a8e8;">流行った曲</h2>

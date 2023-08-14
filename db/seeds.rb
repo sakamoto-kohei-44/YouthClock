@@ -110,7 +110,9 @@ phrases = [
   { content: '忖度', year: 2017 },
   { content: '大迫)半端ないって', year: 2018 },
   { content: 'タピる', year: 2019 },
-  { content: '3密', year: 2020 },
+  { content: '鬼滅の刃', year: 2020 },
+  { content: 'Go To キャンペーン', year: 2020 },
+  { content: 'Zoom', year: 2020 },
 
 
   # 他のフレーズデータを追加...

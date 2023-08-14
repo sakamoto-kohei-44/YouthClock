@@ -22,7 +22,7 @@ class SongsController < ApplicationController
     song_texts = @songs.map { |song| "#{song.artist} - #{song.title}" }
   
     # ランダムな流行の言葉を取得
-    @phrase = Phrase.where(year: @year).order(Arel.sql("RANDOM()")).first
+    @phrases = Phrase.where(year: @year).order(Arel.sql("RANDOM()"))
 
     if @phrase
       @tweet_content = "#{@year}年の人気曲上位3曲: " + song_texts.join(", ") + ". その年の流行の言葉: #{@phrase.content}"

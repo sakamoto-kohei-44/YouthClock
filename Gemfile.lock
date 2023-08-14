@@ -264,7 +264,6 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.3-arm64-darwin)
-    sqlite3 (1.6.3-x86_64-linux)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
