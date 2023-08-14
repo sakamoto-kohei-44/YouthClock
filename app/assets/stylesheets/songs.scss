@@ -1,6 +1,7 @@
 .centered-content {
   text-align: center;
   margin-top: 50px; // 追加：センタリングのためのマージンを調整
+  width: 100%;
 }
 
 .header-content {
@@ -86,7 +87,7 @@ body {
                1px -1px 0 #FFFFFF,
               -1px  1px 0 #FFFFFF,
                1px  1px 0 #FFFFFF;  /* 白色の外枠 */
-  font-size: 5em;  /* フォントサイズを2倍にしてみます。必要に応じて調整 */
+  font-size: 4em;  /* フォントサイズを2倍にしてみます。必要に応じて調整 */
 }
 
 .centered-content.lower-text {
