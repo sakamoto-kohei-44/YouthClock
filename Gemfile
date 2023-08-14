@@ -63,4 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspotify'
 gem 'bootstrap', '~> 5.0.2'
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+
+group :production do
+  gem 'pg'
+end
