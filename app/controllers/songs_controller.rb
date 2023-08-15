@@ -20,16 +20,12 @@ class SongsController < ApplicationController
   
     @songs = Song.where(year: @year).limit(3)
     song_texts = @songs.map { |song| "#{song.artist} - #{song.title}" }
-  
+
+    @passed_years = 2023 - @year
     # ランダムな流行の言葉を取得
-    @phrases = Phrase.where(year: @year).order(Arel.sql("RANDOM()"))
+    @phrases = Phrase.where(year: @year).limit(4)
 
-    if @phrase
-      @tweet_content = "#{@year}年の人気曲上位3曲: " + song_texts.join(", ") + ". その年の流行の言葉: #{@phrase.content}"
-    else
-      @tweet_content = "#{@year}年の人気曲上位3曲: " + song_texts.join(", ")
-    end
+    @tweet_content = "#{@passed_years}年時を巻き戻しました~ #{@year}年の人気曲上位3曲: " + song_texts.join(", ")
+  end
 end
 
-  
-end

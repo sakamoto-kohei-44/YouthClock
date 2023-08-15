@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_12_035807) do
+ActiveRecord::Schema.define(version: 2023_08_15_010625) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "phrases", force: :cascade do |t|
     t.string "content"
@@ -23,6 +26,7 @@ ActiveRecord::Schema.define(version: 2023_08_12_035807) do
     t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "youtube_id"
   end
 
 end
