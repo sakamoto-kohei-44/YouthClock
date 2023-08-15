@@ -1,38 +1,45 @@
-<h1 class="centered-content lower-text">青春時代を過ごした<%= @year %>年を思い出そう！</h1>
+<div style="display: flex; flex-direction: column; min-height: 100vh;">
+  
+  <!-- メインコンテンツ -->
+  <div style="flex: 1;">
+    <h1 class="centered-content lower-text">青春時代を過ごした<%= @year %>年を思い出そう！</h1>
 
-<h2 class="centered-content" style="color: #00a8e8; font-weight: bold; margin-top: 20px;">
-  <%= @passed_years %>年時を巻き戻しました~
-</h2>
-<div class="content-container">
-    <!-- 流行の言葉の部分 -->
-    <div class="phrase-section">
-      <% if @phrases.any? %>
-        <h2 style="text-align: center; color: #00a8e8;">その年の流行ったもの</h2>
-        <% @phrases.each do |phrase| %>
-          <p class="centered-block with-width song-item"><%= phrase.content %></p>
-        <% end %>
-      <% end %>
-    </div>
-    <!-- 流行った曲の部分 -->
-    <div class="songs-section">
-        <h2 style="text-align: center; color: #00a8e8;">流行った曲</h2>
-        <p style="text-align: center; font-size: 12px; margin-top: 5px;">※ポンコツアプリなので再生できません</p>
-        <div style="max-width: 600px; margin: 0 auto;">
-            <% @songs.each do |song| %>
-                <div class="centered-block with-width song-item">
-                    <p><%= song.artist %> - <%= song.title %> (<%= song.year %>年)</p>
-                    <!-- 埋め込むYouTube動画 -->
-                    <iframe width="100" height="63" src="https://www.youtube.com/embed/#{post.youtube_url[32..42]}<%= song.youtube_id %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+    <h2 class="centered-content" style="color: #00a8e8; font-weight: bold; margin-top: 20px;">
+      <%= @passed_years %>年時を巻き戻しました~
+    </h2>
+    <div class="content-container">
+        <!-- 流行の言葉の部分 -->
+        <div class="phrase-section">
+          <% if @phrases.any? %>
+            <h2 style="text-align: center; color: #00a8e8;">その年の流行ったもの</h2>
+            <% @phrases.each do |phrase| %>
+              <p class="centered-block with-width song-item"><%= phrase.content %></p>
             <% end %>
+          <% end %>
+        </div>
+        <!-- 流行った曲の部分 -->
+        <div class="songs-section">
+            <h2 style="text-align: center; color: #00a8e8;">流行った曲</h2>
+            <p style="text-align: center; font-size: 12px; margin-top: 5px;">※ポンコツアプリなので再生できません</p>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <% @songs.each do |song| %>
+                    <div class="centered-block with-width song-item">
+                        <p><%= song.artist %> - <%= song.title %> (<%= song.year %>年)</p>
+                        <!-- 埋め込むYouTube動画 -->
+                        <iframe width="100" height="63" src="https://www.youtube.com/embed/#{post.youtube_url[32..42]}<%= song.youtube_id %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                <% end %>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="memories-section" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px;">
-  <h2 style="text-align: center; color: #00a8e8;">思い出投稿(黒歴史を投稿するのは浄化アプリと被るのでダメよ)</h2>
-  <textarea id="memoryContent" rows="4" style="width: 100%; border-radius: 5px; padding: 10px;"></textarea>
-  <button id="shareOnTwitter" style="margin-top: 10px; padding: 5px 15px; border: none; border-radius: 5px; background-color: #00a8e8; color: white;">ツイートする</button>
+  </div>
+  
+  <!-- 思い出投稿セクション -->
+  <div class="memories-section" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px;">
+    <h2 style="text-align: center; color: #00a8e8;">思い出投稿(黒歴史を投稿するのは浄化アプリと被るのでダメよ)</h2>
+    <textarea id="memoryContent" rows="4" style="width: 100%; border-radius: 5px; padding: 10px;"></textarea>
+    <button id="shareOnTwitter" style="margin-top: 10px; padding: 5px 15px; border: none; border-radius: 5px; background-color: #00a8e8; color: white;">ツイートする</button>
+  </div>
 </div>
 
 <script>
